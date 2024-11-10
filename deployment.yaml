@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boilerplate-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: boilerplate
+  template:
+    metadata:
+      labels:
+        app: boilerplate
+    spec:
+      containers:
+      - name: boilerplate-container
+        image: 724772061851.dkr.ecr.ap-south-1.amazonaws.com/boilerplate-ecr:latest
+        ports:
+        - containerPort: 6041
